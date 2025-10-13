@@ -22,6 +22,7 @@ const stackTemplates = {
   MERN: "mern",
   NextJS: "nextjs",
   FastAPI: "fastapi",
+  "Express + Typescript": "express-ts",
   "Express + PostgreSQL": "express-pg",
   Django: "django",
 };
@@ -39,7 +40,7 @@ const main = async () => {
       name: "folderName",
       message: chalk.magenta.bold("📁 Enter a name for your output folder:"),
       default: (answers) =>
-        `initly-${answers.stack.toLowerCase().replace(/\s+/g, "-")}`,
+        `initly-${stackTemplates[answers.stack].toLowerCase().replace(/\s+/g, "-")}`,
     },
     {
       type: "confirm",
